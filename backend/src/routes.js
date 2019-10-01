@@ -1,7 +1,7 @@
 // This file is used to modularizate the routes
 
 const express = require('express');
-
+const SessionController = require('./controllers/SessionController')
 const routes = express.Router();
 
 // Define routes with GET, POST, PUT, DELETE (ex.: localhost:333/hellotext)
@@ -42,5 +42,9 @@ routes.post('/usersv2', (req, res) => {
 routes.put('/users/:id', (req, res) => {
     return res.json({message: req.params.id});
 })
+
+// Test from browser http://localhost:3333/usersv0?idade=20
+// This example get the params at url and return it in json
+routes.get('/users', SessionController.store);
 
 module.exports = routes;

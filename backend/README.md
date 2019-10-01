@@ -39,6 +39,12 @@ yarn add nodemon -D
 },
 ``` 
 
+#### Install mongoose (for MongoDB) - use this url to test mongodb connections: http://portquiz.net:27017/
+```
+yarn add mongoose
+```
+Remember to add the correct user and pass at mongoose.connect(...) at server.js
+
 #### Install insomnia to test requests: https://insomnia.rest 
 
 ## 2. Basic
@@ -107,6 +113,9 @@ app.put('/users/:id', (req, res) => {
 // Define a port to listen
 app.listen(3333);
 ```
+
+#### Create a document oriented database: 
+You can create on in MongoDB Atlas (free with 500gb space). Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
 
 #### Execute for dev
 ```
