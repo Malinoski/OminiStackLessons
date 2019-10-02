@@ -45,6 +45,6 @@ routes.put('/usersv3/:id', (req, res) => {
 })
 */
 
-routes.post('/users', SessionController.store);
+routes.post('/sessions', SessionController.store);
 
 module.exports = routes;

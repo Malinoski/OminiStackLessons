@@ -1,45 +1,39 @@
 # Backend
 
-## 1. Ambiente de desenvolvimento macOS (ref)
+## 1. Environment (macOS)
 
-#### Install homebrew
 ```
+# Install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
 
-#### Install node
-```
+# Install node
 brew install node@10.16.3
-```
 
-#### Install npm
-```
+# Check if has npm (if not, install it)
 npm -v
-```
 
-#### Install yarn (plus for other packages)
-```
+# Install yarn (plus for other packages)
 brew install yarn --ignore-dependencies
+
+# Install properties file package
+npm install properties-reader
 ```
 
-#### Install Visual Studio Code: https://code.visualstudio.com/
+## 2. Install Visual Studio Code: https://code.visualstudio.com/
 
-#### Install ". code"
-Open vscode > press command + shift + p > Type "Install code command in PATH"
+Install ". code": Open the vs and > press command + shift + p > Type "Install code command in PATH"
 
-#### Install nodemon for not stop and start node every changes (only for development)
+Install nodemon for not stop and start node every changes (only for development):
 ```
 yarn add nodemon -D
 ```
 
-#### And add this to package.json:
+And add this to package.json:
 ```
 "scripts": {
   "dev": "nodemon src/server.js"
 },
-``` 
-
-
+```
 
 #### Install mongoose (for MongoDB) - use this url to test mongodb connections
 ```
@@ -70,54 +64,8 @@ code .
 yarn add express
 ```
 
-#### Create the src folder
-```
-mkdir src
-```
-
-#### Create the first service
-```
-cd src
-vim server.js
-```
-```
-// Inport express
-const express = require('express');
-
-// Create an app
-const app = express();
-
-// Define routes with GET, POST, PUT, DELETE (ex.: localhost:333/hellotext)
-
-app.get('/hellotext', (req, res) => {
-    return res.send('hello world!');
-})
-
-app.get('/hellojson', (req, res) => {
-    return res.json({message: 'hello world!'});
-})
-
-// req.query is used to get params like like users?idade=20
-app.get('/users', (req, res) => {
-    return res.json({idade: req.query.idade});
-})
-
-// req.query is also used to get params in body
-app.post('/users', (req, res) => {
-    return res.json({message: req.query.idade});
-})
-
-// req.param is used to get uri param on format like users/3
-app.put('/users/:id', (req, res) => {
-    return res.json({message: req.params.id});
-})
-
-// Define a port to listen
-app.listen(3333);
-```
-
-#### Create a document oriented database online (MongoDB Atlas) or local: 
-Define some username (<user> )and password (<pass>) below
+#### Create a document oriented database online as MongoDB Atlas or local: 
+First, define desired username and password at config.ini, and use it below:
 
 ##### Online (MongoDB Atlas)
 You can create a database on in MongoDB Atlas (free with 500gb space): Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
@@ -138,20 +86,14 @@ db.createUser(
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )
-
-# List all databases
-show dbs
-
 ```
 
-#### Execute for dev
+#### Run
 ```
 cd backend
 yarn dev
-```
 
-#### Or production
-```
+# note: for production use:
 node src/server.js
 ```
 

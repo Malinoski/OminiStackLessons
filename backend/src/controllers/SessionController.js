@@ -3,13 +3,13 @@
 const User = require('../models/User');
 
 module.exports = {
+    /*
+    // just to test
     store(req, res){
         return res.json({message: "Hello"});
     },
-    /*
-    getHello(req, res){
-        return res.json({message: "Hello"});
-    },
+    */
+   
     async store(req, res){
         // The code below is the same as:
         // const email = req.body.email;
@@ -19,5 +19,5 @@ module.exports = {
         const user = await User.create({email});
 
         return res.json(user);
-    }*/
+    }
 };
