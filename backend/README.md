@@ -39,7 +39,9 @@ yarn add nodemon -D
 },
 ``` 
 
-#### Install mongoose (for MongoDB) - use this url to test mongodb connections: http://portquiz.net:27017/
+
+
+#### Install mongoose (for MongoDB) - use this url to test mongodb connections
 ```
 yarn add mongoose
 ```
@@ -114,11 +116,37 @@ app.put('/users/:id', (req, res) => {
 app.listen(3333);
 ```
 
-#### Create a document oriented database: 
-You can create on in MongoDB Atlas (free with 500gb space). Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
+#### Create a document oriented database online (MongoDB Atlas) or local: 
+Define some username (<user> )and password (<pass>) below
+
+##### Online (MongoDB Atlas)
+You can create a database on in MongoDB Atlas (free with 500gb space): Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
+
+##### Local
+```
+# Run
+mongod --config /usr/local/etc/mongod.conf &
+
+# Connect
+mongo
+
+# Create app user
+db.createUser(
+  {
+    user: "<user>",
+    pwd: "<pass>",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+# List all databases
+show dbs
+
+```
 
 #### Execute for dev
 ```
+cd backend
 yarn dev
 ```
 
@@ -127,4 +155,12 @@ yarn dev
 node src/server.js
 ```
 
-#### Test in insomnia and via browser (http://localhost:3333/)
+#### Test in insomnia: 
+```
+Method: POST
+Url: http://localhost:3333/users
+Json: 
+{
+  "email": "iuri@xom.xom"
+}
+```

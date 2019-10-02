@@ -6,6 +6,7 @@ const routes = express.Router();
 
 // Define routes with GET, POST, PUT, DELETE (ex.: localhost:333/hellotext)
 
+/* 
 // Test from browser http://localhost:3333/hellov1
 // This example return a plain text
 routes.get('/hellov1', (req, res) => {
@@ -39,12 +40,11 @@ routes.post('/usersv2', (req, res) => {
 // Test on insomnia, with the following url: http://localhost:3333/users/2 
 // req.param is used to get uri param on format like users/3
 // This example receive a param at url and can get params at body ex.: "idade=21"
-routes.put('/users/:id', (req, res) => {
+routes.put('/usersv3/:id', (req, res) => {
     return res.json({message: req.params.id});
 })
+*/
 
-// Test from browser http://localhost:3333/usersv0?idade=20
-// This example get the params at url and return it in json
-routes.get('/users', SessionController.store);
+routes.post('/users', SessionController.store);
 
 module.exports = routes;
