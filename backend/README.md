@@ -104,7 +104,7 @@ Install https://insomnia.rest, open it and create the folloing tests:
 ```
 Method: POST
 Url: http://localhost:3333/session
-Json: 
+Body (json): 
 {
   "email": "iuri@xom.xom"
 }
@@ -120,7 +120,6 @@ Multpart:
   price: 50
   techs: ReactJS, React Native, Node.js
 Header:
-  content: multipart/form-data
   user: <put here any valid user id>
 ```
 
@@ -133,11 +132,23 @@ Query:
 P.s.: You can access directly by http://localhost:3333/spots?tech=ReactJS
 ```
 
-### Dashboard show (list all spots from a user)
+Dashboard show (list all spots from a user)
 ```
 Method: GET
 Header:
   user_id: <put here any valid user id>
+```
+
+### Booking store (booking a spot with a specific users)
+```
+Method: POST
+Url: http://localhost:3333/spots/<put here any valid spot id>/bookings
+Body (json):
+  {
+	  "date": "03 de outubro"
+  }
+Header:
+  user_id: <put here any valid user id>  
 ```
 
 ## 6. Appendix
