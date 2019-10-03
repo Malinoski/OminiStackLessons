@@ -7,11 +7,6 @@ const property = require('properties-reader');
 // Create an app
 const app = express();
 
-// Property file
-var properties = property(__dirname + '/config.ini');
-var mongodbUser = properties.get('mongodb.user');
-var mongodbPass = properties.get('mongodb.pass');
-
 /*
 // online (MongoDB Atlas)
 mongoose.connect('mongodb+srv://ownistack:<pass>@omnistack-cwf0c.mongodb.net/test?retryWrites=true&w=majority',{
@@ -22,7 +17,7 @@ mongoose.connect('mongodb+srv://ownistack:<pass>@omnistack-cwf0c.mongodb.net/tes
 */
 
 // localhost
-mongoose.connect('mongodb://'+mongodbUser+':'+mongodbPass+'@localhost/test?retryWrites=true&w=majority',{
+mongoose.connect('mongodb://ownistack:fBePy4spvzcbp6HY@localhost/test?retryWrites=true&w=majority',{
     // The code below is used to remove some warning messages
     useNewUrlParser: true,
     useUnifiedTopology: true

@@ -2,6 +2,7 @@
 
 const express = require('express');
 const SessionController = require('./controllers/SessionController')
+const SpotController = require('./controllers/SpotController')
 const routes = express.Router();
 
 // Define routes with GET, POST, PUT, DELETE (ex.: localhost:333/hellotext)
@@ -46,5 +47,6 @@ routes.put('/usersv3/:id', (req, res) => {
 */
 
 routes.post('/sessions', SessionController.store);
+routes.post('/spots', SpotController.store);
 
 module.exports = routes;

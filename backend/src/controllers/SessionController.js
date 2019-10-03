@@ -15,8 +15,13 @@ module.exports = {
         // const email = req.body.email;
         const {email} = req.body;
 
-        // 'async' and 'await' wait the function finishes
-        const user = await User.create({email});
+        // If the user exist, return it, or create one
+        // P.s: 'async' and 'await' wait the function finishes
+        // P.s: 'let' is variable and can change
+        let user = await User.findOne({email});
+        if(!user){
+            user = await User.create({email});
+        }        
 
         return res.json(user);
     }

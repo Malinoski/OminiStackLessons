@@ -27,6 +27,11 @@ Install properties file package
 npm install properties-reader
 ```
 
+Intall package for image upload
+```
+yarn add multer
+```
+
 ## 2. (Optional) Install and configure Visual Studio Code to view the code better
 
 Install ". code": Open the vs and > press command + shift + p > Type "Install code command in PATH"
@@ -59,8 +64,6 @@ Install mongoose
 ```
 yarn add mongoose
 ```
-
-Use or change the username and password located in config.ini
 
 ### MongoDB Atlas
 You can create a database on in MongoDB Atlas (free with 500gb space): Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
