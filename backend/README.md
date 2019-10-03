@@ -126,6 +126,15 @@ Header:
   user: <put here any valid user id>
 ```
 
+### Test03 (list spots, filtered by a technology )
+```
+Method: GET
+Query:
+  tech: ReactJS
+
+P.s.: You can access directly by http://localhost:3333/spots?tech=ReactJS
+```
+
 ## 6. Appendix
 
 Basic basic structure was created as below:

@@ -2,6 +2,16 @@ const User = require('../models/User');
 const Spot = require('../models/Spot');
 
 module.exports = {
+
+    async index(req, res){
+        const { tech } = req.query; // here we use 'query' (ex.: http://localhost:3333/spots?tech=ReactJS)
+
+        // Find in mongodb        
+        const spots = await Spot.find({ techs: tech});
+
+        return res.json(spots);
+    },
+
     async store(req, res){
         console.log(req.body);
         console.log(req.file);
