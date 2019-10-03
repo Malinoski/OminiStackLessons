@@ -2,24 +2,32 @@
 
 ## 1. Environment (macOS)
 
+Install homebrew
 ```
-# Install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-# Install node
+Install node
+```
 brew install node@10.16.3
+```
 
-# Check if has npm (if not, install it)
+Check if has npm (if not, install it)
+```
 npm -v
+```
 
-# Install yarn (plus for other packages)
+Install yarn (plus for other packages)
+```
 brew install yarn --ignore-dependencies
+```
 
-# Install properties file package
+Install properties file package
+```
 npm install properties-reader
 ```
 
-## 2. Install Visual Studio Code: https://code.visualstudio.com/
+## 2. (Optional) Install and configure Visual Studio Code to view the code better
 
 Install ". code": Open the vs and > press command + shift + p > Type "Install code command in PATH"
 
@@ -35,42 +43,29 @@ And add this to package.json:
 },
 ```
 
-#### Install mongoose (for MongoDB) - use this url to test mongodb connections
-```
-yarn add mongoose
-```
-Remember to add the correct user and pass at mongoose.connect(...) at server.js
-
-#### Install insomnia to test requests: https://insomnia.rest 
-
-## 2. Basic
-
-#### Root structure
-```
-mkdir OmniStack
-cd OmniStack
-```
-
-#### Backend structure
-```
-mkdir backend
-cd backend
-yarn init -y
-code .
-```
-
-#### Install express packages. Press command + shift + p > Type "Toggle integrated terminal" and execute:
+Install express packages. Press command + shift + p > Type "Toggle integrated terminal" and execute:
 ```
 yarn add express
 ```
 
-#### Create a document oriented database online as MongoDB Atlas or local: 
-First, define desired username and password at config.ini, and use it below:
+Open the project in vs
+```
+code .
+```
 
-##### Online (MongoDB Atlas)
+## 3. MongoDB
+
+Install mongoose
+```
+yarn add mongoose
+```
+
+Use or change the username and password located in config.ini
+
+### MongoDB Atlas
 You can create a database on in MongoDB Atlas (free with 500gb space): Database access - create a new user; Network access - allow from anywhere; Cluster - Connect to you application; 
 
-##### Local
+### Local
 ```
 # Run
 mongod --config /usr/local/etc/mongod.conf &
@@ -81,14 +76,15 @@ mongo
 # Create app user
 db.createUser(
   {
-    user: "<user>",
-    pwd: "<pass>",
+    user: "ownistack",
+    pwd: "fBePy4spvzcbp6HY",
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )
 ```
 
-#### Run
+## 4. Run
+
 ```
 cd backend
 yarn dev
@@ -97,7 +93,11 @@ yarn dev
 node src/server.js
 ```
 
-#### Test in insomnia: 
+## 5. Test (Insomnia):
+
+Install https://insomnia.rest 
+
+Open and config the test
 ```
 Method: POST
 Url: http://localhost:3333/users
@@ -105,4 +105,20 @@ Json:
 {
   "email": "iuri@xom.xom"
 }
+```
+
+## 6. Appendix
+
+Basic basic structure was created as below:
+
+```
+# Root structure
+mkdir OmniStack
+cd OmniStack
+mkdir backend
+cd backend
+
+# Init
+yarn init -y
+
 ```
