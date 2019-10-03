@@ -121,6 +121,8 @@ Multpart:
   company: martin
   price: 50
   techs: ReactJS, React Native, Node.js
+Header:
+  user: <put here any valid user id>
 ```
 
 ## 6. Appendix
