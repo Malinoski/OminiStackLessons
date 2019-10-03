@@ -122,6 +122,7 @@ Multpart:
   price: 50
   techs: ReactJS, React Native, Node.js
 Header:
+  content: multipart/form-data
   user: <put here any valid user id>
 ```
 
