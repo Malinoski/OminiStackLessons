@@ -12,6 +12,10 @@ module.exports = {
             date,
         });
 
+        // Inted of return the id of user and spot,
+        // the code below return the full information about each one
+        await booking.populate('spot').populate('user').execPopulate();
+
         return res.json(booking);
     }
 };
