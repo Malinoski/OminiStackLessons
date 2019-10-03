@@ -100,7 +100,9 @@ node src/server.js
 
 Install https://insomnia.rest 
 
-Open and config the test
+Open Insomnia and create the tests
+
+### Test01 (authentication)
 ```
 Method: POST
 Url: http://localhost:3333/users
@@ -108,6 +110,17 @@ Json:
 {
   "email": "iuri@xom.xom"
 }
+```
+
+### Test02 (post a new spot, then, check if the image was saved in 'backend/uploads')
+```
+Method: POST
+Url: http://localhost:3333/users
+Multpart:
+  thumbnail: <upload an image>
+  company: martin
+  price: 50
+  techs: ReactJS, React Native, Node.js
 ```
 
 ## 6. Appendix

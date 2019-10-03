@@ -1,6 +1,13 @@
 // This file is used to modularizate the routes
 
 const express = require('express');
+
+// Fileupload
+const multer = require('multer'); 
+uploadConfig = require('./config/upload');
+const upload  = multer(uploadConfig);
+
+// Controllers
 const SessionController = require('./controllers/SessionController')
 const SpotController = require('./controllers/SpotController')
 const routes = express.Router();
@@ -47,6 +54,6 @@ routes.put('/usersv3/:id', (req, res) => {
 */
 
 routes.post('/sessions', SessionController.store);
-routes.post('/spots', SpotController.store);
+routes.post('/spots', upload.single('thumbnail'), SpotController.store); //  upload.single if for one file
 
 module.exports = routes;
