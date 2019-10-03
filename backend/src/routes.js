@@ -8,8 +8,10 @@ uploadConfig = require('./config/upload');
 const upload  = multer(uploadConfig);
 
 // Controllers
-const SessionController = require('./controllers/SessionController')
-const SpotController = require('./controllers/SpotController')
+const SessionController = require('./controllers/SessionController');
+const SpotController = require('./controllers/SpotController');
+const DashboardController = require('./controllers/DashboardController');
+
 const routes = express.Router();
 
 // Define routes with GET, POST, PUT, DELETE (ex.: localhost:333/hellotext)
@@ -56,5 +58,6 @@ routes.put('/usersv3/:id', (req, res) => {
 routes.post('/sessions', SessionController.store);
 routes.get('/spots', SpotController.index);
 routes.post('/spots', upload.single('thumbnail'), SpotController.store); //  upload.single if for one file
+routes.get('/dashboard', DashboardController.show)
 
 module.exports = routes;

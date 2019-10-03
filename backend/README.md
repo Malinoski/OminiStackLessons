@@ -96,26 +96,24 @@ yarn dev
 node src/server.js
 ```
 
-## 5. Test (Insomnia):
+## 5. Tests (Insomnia):
 
-Install https://insomnia.rest 
+Install https://insomnia.rest, open it and create the folloing tests:
 
-Open Insomnia and create the tests
-
-### Test01 (authentication)
+### Session store (any email or string. Just put and you are logged)
 ```
 Method: POST
-Url: http://localhost:3333/users
+Url: http://localhost:3333/session
 Json: 
 {
   "email": "iuri@xom.xom"
 }
 ```
 
-### Test02 (post a new spot, then, check if the image was saved in 'backend/uploads')
+### Spot store (post a new spot, then, check if the image was saved in 'backend/uploads')
 ```
 Method: POST
-Url: http://localhost:3333/users
+Url: http://localhost:3333/spots
 Multpart:
   thumbnail: <upload an image>
   company: martin
@@ -126,13 +124,20 @@ Header:
   user: <put here any valid user id>
 ```
 
-### Test03 (list spots, filtered by a technology )
+### Spot index (list spots, filtered by a technology)
 ```
 Method: GET
 Query:
   tech: ReactJS
 
 P.s.: You can access directly by http://localhost:3333/spots?tech=ReactJS
+```
+
+### Dashboard show (list all spots from a user)
+```
+Method: GET
+Header:
+  user_id: <put here any valid user id>
 ```
 
 ## 6. Appendix
