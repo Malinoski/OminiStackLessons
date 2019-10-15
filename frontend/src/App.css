@@ -1,0 +1,28 @@
+/* Font Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box; 
+}
+
+html, body, #root {
+  min-height: 100%; /* Allow the background image to fill all the page */    
+}
+
+body {
+  background: #000 url('./assets/background.jpg') no-repeat;
+  background-size: cover; /* fill all window */
+  -webkit-font-smoothing: antialiased !important /* for more detailed fonts */
+}
+
+/* Define font on tags: */
+body, input, button {
+
+  /* '' are commonly used to spacify custon fonts, like Roboto */
+  /* If not load 'Roboto', the Arial will be, but if not work, will be load Helveltica, and so on */
+  font-family: 'Roboto', Arial, Helveltica, sans-serif; 
+}
+
