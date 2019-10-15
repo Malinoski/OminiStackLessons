@@ -26,3 +26,71 @@ body, input, button {
   font-family: 'Roboto', Arial, Helveltica, sans-serif; 
 }
 
+.container {
+  /* add some space at top of page */
+  margin: 80px auto;
+
+  /* if width is less than 450, it will cover 100 of the page */
+  max-width: 450px;
+  width: 100%; 
+
+  /* all inside elements will be centered and each one inside other (columns) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  background: #ffffff;
+  margin-top: 50px;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+/* forst p before content class */
+.content > p {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.content form {
+  /* each one inside other (columns) */ 
+  display: flex;
+  flex-direction: column;
+}
+
+.content form label {
+  font-size: 14px;
+  color: #444444;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.content form input {
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  height: 45 px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+/* .class button.class */
+.content button.btn {
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #f05a5b;
+  color: #ffffff; /* button color */
+  cursor: pointer; /* change the cursor to be "clickable" when passed over on the button */ 
+}
+
+.content button.btn:hover {
+  background:  #f05a5adc;
+}
