@@ -1,7 +1,8 @@
 # Ownistack exercices
 
-Notes:
+Frontend notes:
 * Login uses components (html inside javascript) and states (input models). After login, the frontend will store the user id in the 'localstorage' (you can the on the Bronser > Inspect > Application)
+* Implement React routes feature 
 
 ## 1. Dev environment
 
@@ -200,6 +201,11 @@ Header:
 React front-end
 
 ### 3.1. Environment 
+
+* Install router module
+```
+yarn add react-router-dom
+```
 
 * To create basic structure:
 ```
