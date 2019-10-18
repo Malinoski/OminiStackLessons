@@ -2,6 +2,7 @@ import React, {useState}  from 'react'; // useState allow to use states in our a
 // import api from './services/api'
 import './App.css';
 import logo from './assets/logo.svg';
+import api from './sevices/api';
 
 /*
 function App() {
@@ -19,10 +20,22 @@ function App() {
   // setEmail is a function to update the email variable
   const [email, setEmail] = useState(''); 
 
-  function handleSubmit(event){    
+  async function handleSubmit(event){    
+
     event.preventDefault(); // do not redirect to another page
     console.log("login debug");
-    console.log(email);
+    console.log(email); // from input
+
+    // Lets call the api
+    const response = await api.post('/sessions', { email })
+    console.log(response);
+
+    // Lets get the user id
+    const {_id} = response.data;
+    console.log(_id);
+
+    // Lets store the user id for all app
+    localStorage.setItem('user', _id);
 
   }
 

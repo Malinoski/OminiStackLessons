@@ -1,7 +1,7 @@
 # Ownistack exercices
 
 Notes:
-* Login uses components (html inside javascript) and states (input models)
+* Login uses components (html inside javascript) and states (input models). After login, the frontend will store the user id in the 'localstorage' (you can the on the Bronser > Inspect > Application)
 
 ## 1. Dev environment
 
@@ -80,6 +80,11 @@ yarn add multer
 * Install axios (allow to call APIs)
 ```
 yarn add axios
+```
+
+* Install cors ('allow to config what are the urls can access backend server')
+```
+yarn add cors
 ```
 
 * To create basic structure:

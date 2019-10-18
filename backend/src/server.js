@@ -1,6 +1,7 @@
 // Inport express
 const express = require('express');
 const mongoose = require('mongoose'); // for mongodb
+const cors = require('cors');
 const routes = require('./routes'); // ower routers
 const property = require('properties-reader');
 
@@ -22,6 +23,9 @@ mongoose.connect('mongodb://ownistack:fBePy4spvzcbp6HY@localhost/test?retryWrite
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+
+// app.use(cors({ origin: 'http://localhost:3333'}));
+app.use(cors()); // any host can access the backend server
 
 // Tell to app know json body requests
 app.use(express.json());
