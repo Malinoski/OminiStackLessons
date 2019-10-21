@@ -4,6 +4,7 @@ const mongoose = require('mongoose'); // for mongodb
 const cors = require('cors');
 const routes = require('./routes'); // ower routers
 const property = require('properties-reader');
+const path = require('path');
 
 // Create an app
 const app = express();
@@ -29,6 +30,10 @@ app.use(cors()); // any host can access the backend server
 
 // Tell to app know json body requests
 app.use(express.json());
+
+// Used to return static files (pdf, iamges, etc..0)
+// Obs.: __dirname return the current file path
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
 
 // Add ower routes
 app.use(routes);

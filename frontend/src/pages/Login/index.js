@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import api from '../../sevices/api';
 
-export default function Login(){
+// '{history}' is used to route between pages
+export default function Login({history}){
 
     // A new state
     // P.s.: 
@@ -25,6 +26,9 @@ export default function Login(){
 
         // Lets store the user id for all app
         localStorage.setItem('user', _id);
+
+        // After all, send the user to Dashboard
+        history.push('/dashboard')
 
     }
 
